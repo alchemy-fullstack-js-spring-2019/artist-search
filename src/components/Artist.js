@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Artist({ artist }){
-  console.log('artist', artist);
   return (
-    <p>artist:{artist.name}</p>
+    <p>{artist.name}</p>
   );
 }
 

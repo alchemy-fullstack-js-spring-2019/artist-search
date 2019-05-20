@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import Artists from './Artists';
 import ArtistSearch from './ArtistSearch';
-// import { getArtists } from '../services/getArtists';
+import { fetchArtists } from '../services/fetchArtists';
 
 export default class ArtistsContainer extends PureComponent {
   state = {
@@ -9,6 +9,19 @@ export default class ArtistsContainer extends PureComponent {
     page: 1,
     text: '',
     artists: []
+  }
+
+  getArtists = () => {
+    fetchArtists(this.state.artistName)
+      .then(({ artists }) => {
+        this.setState({ artists: artists });
+      });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.artistName !== this.state.artistName) {
+      this.getArtists(this.state.artistName);
+    }
   }
 
   handleChange = ({ target }) => {
@@ -28,15 +41,11 @@ export default class ArtistsContainer extends PureComponent {
 
   render() {
     const { artistName, page, text, artists } = this.state;
-    const artistArray = [
-      { name: 'Hello' },
-      { name: 'Goodbye' }
-    ];
 
     return (
       <>
         <ArtistSearch text={text} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-        <Artists artistArray={artistArray}/>
+        <Artists artistArray={artists}/>
       </>
     );
   }

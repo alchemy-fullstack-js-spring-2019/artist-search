@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Artist from './Artist';
 
 function Artists({ artistArray }){
-  const artistList = artistArray.map(artist => {
+  const artistList = artistArray.map((artist, i) => {
     return (
-      <li key={artist.name}>
+      <li key={i}>
         <Artist artist={artist}/>
       </li>
     );
