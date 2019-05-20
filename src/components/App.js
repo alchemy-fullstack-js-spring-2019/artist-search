@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchForm from './SearchForm';
+import ArtistSearch from './search/ArtistSearch';
 
 export default function App() {
-  return <SearchForm />;
+  return <ArtistSearch />;
 }
