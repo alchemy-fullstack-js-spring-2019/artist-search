@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import SearchForm from './SearchForm';
-import ArtistList from './ArtistList';
-import artistGetter from '../../services/artistGetter';
+import SearchForm from '../components/search/SearchForm';
+import ArtistList from '../components/search/ArtistList';
+import artistGetter from '../services/artistGetter';
 
 export default class ArtistSearch extends PureComponent {
   state = {
@@ -17,6 +17,7 @@ export default class ArtistSearch extends PureComponent {
     
     return artistGetter(this.state.searchTerm)
       .then(res => {
+        console.log(res);
         this.setState({ artistResults: res.artists });
       });
   }

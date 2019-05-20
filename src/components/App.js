@@ -1,6 +1,12 @@
 import React from 'react';
-import ArtistSearch from './search/ArtistSearch';
+import ArtistSearch from '../containers/ArtistSearch';
+import Header from './Header';
 
 export default function App() {
-  return <ArtistSearch />;
+  return (
+  <>
+    <Header />
+    <ArtistSearch />
+  </>
+  );
 }
