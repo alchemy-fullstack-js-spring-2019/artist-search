@@ -2,16 +2,19 @@ import React, { PureComponent } from 'react';
 import Artists from '../components/Artists';
 import SearchForm from '../components/SearchForm';
 import { getArtists } from '../services/music-brainz-API';
+import Paging from '../components/paging/Paging';
 
 export default class ArtistSearch extends PureComponent {
   state = {
     search: '',
-    artists: []
+    artists: [],
+    currentPage: 1,
+    totalPages: 1
   }
 
   fetchArtists = () => {
-    return getArtists(this.state.search)
-      .then(artistsList => this.setState({ artists: artistsList }));
+    getArtists(this.state.search, this.state.currentPage)
+      .then(({ artists, totalPages }) => this.setState({ artists, totalPages }));
   }
 
   searchSubmit = event => {
@@ -23,13 +26,21 @@ export default class ArtistSearch extends PureComponent {
     this.setState({ [target.name]: target.value });
   }
 
+  updatePage = page => this.setState({ currentPage: page })
+
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.currentPage !== this.state.currentPage) {
+      this.fetchArtists();
+    }
+  }
+
   render() {
     return (
       <>
         <SearchForm search={ this.state.search } handleChange={ this.handleChange } searchSubmit={ this.searchSubmit } />
+        <Paging currentPage={ this.state.currentPage } totalPages={ this.state.totalPages } updatePage={ this.updatePage } />
         <Artists artistArray={ this.state.artists } />
       </>
     );
   }
 }
-//i have state
