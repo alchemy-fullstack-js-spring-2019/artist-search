@@ -7,6 +7,7 @@ export const getArtists = (search) => {
       return json;
     })
     .then(({ artists }) => artists.map(artist => ({
-      name: artist.name
+      name: artist.name,
+      id: artist.id
     })));
 };

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 function Artist({ name }) {
   return (
-    <li>
-      { name }
-    </li>
+    <p>
+      name:{ name }
+    </p>
   );
 }
 
