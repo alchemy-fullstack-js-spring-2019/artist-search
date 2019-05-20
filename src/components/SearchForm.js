@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function SearchForm({ search, handleChange, searchSubmit }) {
   return (
     <form onSubmit={ searchSubmit }>
-      <input type="text" onChange={ handleChange } value={ search } />
+      <input name="search" type="text" onChange={ handleChange } value={ search } />
       <button type="submit">Search</button>
     </form>
   );

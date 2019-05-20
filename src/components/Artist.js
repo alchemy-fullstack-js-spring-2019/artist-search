@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Artist({ name }) {
   return (
     <p>
-      name:{ name }
+      { name }
     </p>
   );
 }
