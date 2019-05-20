@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header';
+import SearchForm from './SearchForm';
 
 export default function App() {
-  return <Header />;
+  return <SearchForm />;
 }
