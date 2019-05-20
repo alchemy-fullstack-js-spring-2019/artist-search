@@ -2,13 +2,14 @@ import React, { PureComponent } from 'react';
 import Artists from './Artists';
 import ArtistSearch from './ArtistSearch';
 import { fetchArtists } from '../services/fetchArtists';
+import Paging from '../components/Paging';
 
 export default class ArtistsContainer extends PureComponent {
   state = {
     artistName: '',
     page: 1,
     text: '',
-    artists: []
+    artists: [],
   }
 
   getArtists = () => {
@@ -30,6 +31,17 @@ export default class ArtistsContainer extends PureComponent {
     });
   }
 
+  incrementPage = ()=>{
+    this.setState((state)=>{
+      return { page:state.page + 1 };
+    });
+  }
+  decrementPage = ()=>{
+    this.setState((state)=>{
+      return { page:state.page - 1 };
+    });
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -45,6 +57,7 @@ export default class ArtistsContainer extends PureComponent {
     return (
       <>
         <ArtistSearch text={text} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <Paging currentPage={1} allPages={2} incrementPage={this.incrementPage} decrementPage={this.decrementPage}/>
         <Artists artistArray={artists}/>
       </>
     );
