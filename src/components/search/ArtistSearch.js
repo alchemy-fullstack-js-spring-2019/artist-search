@@ -17,7 +17,6 @@ export default class ArtistSearch extends PureComponent {
     
     return artistGetter(this.state.searchTerm)
       .then(res => {
-        console.log(res);
         this.setState({ artistResults: res.artists });
       });
   }
@@ -27,12 +26,11 @@ export default class ArtistSearch extends PureComponent {
     }
 
     render() {
-      const { searchTerm } = this.state;
+      const { searchTerm, artistResults } = this.state;
       return (
       <>
         <SearchForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} term={searchTerm} />
-        {/* <ArtistList /> */}
-        <p>{searchTerm}</p>
+        <ArtistList artistArr={artistResults} />
       </>
       );
     }

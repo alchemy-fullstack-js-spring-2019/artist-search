@@ -6,12 +6,12 @@ function ArtistList({ artistArr }) {
   const allArtists = artistArr.map(artist => {
     return (
       <li key={artist.id}>
-        <Artist artist={artist.name} id={artist.id} />;
+        <Artist artist={artist.name} id={artist.id} />
       </li>
     );
   });
 
-  return <ul>{allArtists}</ul>;
+  return <ol>{allArtists}</ol>;
 }
 
 ArtistList.propTypes = {
