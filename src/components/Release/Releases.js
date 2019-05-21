@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Release from './Release';
 
-function Releases({ releaseArray }) {
+function Releases({ releaseArray, artist }) {
   const releaseList = releaseArray.map(release => {
     return (
       <li key={ release.id }>
@@ -11,6 +11,7 @@ function Releases({ releaseArray }) {
           title={ release.title }
           date={ release.date }
           coverArt={ release.coverArt }
+          artist={ artist }
         />
       </li>
     );
@@ -24,7 +25,8 @@ function Releases({ releaseArray }) {
 }
 
 Releases.propTypes = {
-  releaseArray: PropTypes.array.isRequired
+  releaseArray: PropTypes.array.isRequired,
+  artist: PropTypes.string.isRequired
 };
 
 export default Releases;

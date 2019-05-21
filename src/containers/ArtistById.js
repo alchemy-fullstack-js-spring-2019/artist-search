@@ -23,7 +23,7 @@ export default class ArtistById extends PureComponent {
 
   render() {
     return (
-      <Releases releaseArray={ this.state.releases } />
+      <Releases releaseArray={ this.state.releases } artist={ this.props.match.params.artist } />
     );
   }
 }

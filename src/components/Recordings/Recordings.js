@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Recording from './Recording';
 
-export default function Recordings({ recordingArray }) {
+export default function Recordings({ artist, recordingArray }) {
   const recordingList = recordingArray.map(recording => {
     return (
       <li key={ recording.id }>
-        <Recording title={ recording.title } />
+        <Recording artist={ artist } title={ recording.title } />
       </li>
     );
   });
@@ -19,5 +19,6 @@ export default function Recordings({ recordingArray }) {
 }
 
 Recordings.propTypes = {
+  artist: PropTypes.string.isRequired,
   recordingArray: PropTypes.array.isRequired
 };
