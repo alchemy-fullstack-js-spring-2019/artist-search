@@ -21,7 +21,6 @@ export default class ArtistById extends PureComponent {
   }
 
   render() {
-    console.log(this.props.match);
     return (
       <Releases releaseArray={ this.state.releases } />
     );
