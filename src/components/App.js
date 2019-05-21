@@ -13,7 +13,7 @@ import {
 export default function App() {
   return (
     <Router>
-      <Header />
+      <Route path="/" component={Header} />
       <Switch>
         <Route exact path="/" component={ArtistSearch} />
         <Route exact path="/artist/:id/:artist" component={ArtistView} />
