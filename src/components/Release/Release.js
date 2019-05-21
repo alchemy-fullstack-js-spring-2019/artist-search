@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Release({ id, title, date, coverArt, artist }) {
   return (
     <>
-      <img src={ coverArt } />
+      <img src={ coverArt } style={ { width: '20vw', height: '20vw' } } />
       <p>
         <Link to={ `/${artist}/release/${id}` }>{ title }, { date }</Link>
       </p>
