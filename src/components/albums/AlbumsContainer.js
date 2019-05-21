@@ -14,7 +14,6 @@ export default class AlbumsContainer extends PureComponent {
       loading: false
     };
   
-  
   getAlbums = () => {
     this.setState({ loading: true });
     console.log('get albums artistID', this.props);
@@ -27,7 +26,8 @@ export default class AlbumsContainer extends PureComponent {
         });
       });
   }
-
+  
+  
   componentDidMount() {
     this.getAlbums();
  
