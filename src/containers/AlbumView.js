@@ -6,6 +6,17 @@ import getLyrics from '../services/getLyrics';
 import Lyrics from '../components/album/Lyrics';
 
 export default class AlbumView extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count : 1
+    };
+
+    this.lyricsLoad = this.lyricsLoad.bind(this);
+  }
+  
+
   state = {
     tracks: null,
     lyrics: ''
@@ -28,12 +39,11 @@ export default class AlbumView extends PureComponent {
       });
   }
 
-  // handle change for when track is clicked - updates state and triggers rerender
-
   lyricsLoad(artist, songTitle) {
     console.log('in lyricsLoad', artist, songTitle);
     return getLyrics(artist, songTitle)
       .then(lyrics => {
+        console.log(lyrics);
         this.setState({ lyrics });
       });
   }
