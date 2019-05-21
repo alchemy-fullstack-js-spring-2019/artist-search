@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import Artists from '../components/Artists';
-import SearchForm from '../components/SearchForm';
+import Artists from '../components/Artist/Artists';
+import SearchForm from '../components/Artist/SearchForm';
 import { getArtists } from '../services/music-brainz-API';
 import Paging from '../components/paging/Paging';
 
