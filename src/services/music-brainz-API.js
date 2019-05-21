@@ -38,6 +38,7 @@ export const getRecordings = (releaseId) => {
       return json;
     })
     .then(({ recordings }) => recordings.map(recording => ({
-      title: recording.title
+      title: recording.title,
+      id: recording.id
     })));
 };

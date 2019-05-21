@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Recordings from '../components/Recordings/Recordings';
 import { getRecordings } from '../services/music-brainz-API';
 
-
 export default class ReleaseById extends PureComponent {
   static propTypes = {
     match: PropTypes.object.isRequired
@@ -18,9 +17,13 @@ export default class ReleaseById extends PureComponent {
       .then(recordings => this.setState({ recordings }));
   }
 
+  componentDidMount() {
+    this.fetchRecordings();
+  }
+
   render() {
     return (
-      <Recordings recordingsArray={ this.state.recordings }/>
+      <Recordings recordingArray={ this.state.recordings }/>
     );
   }
 }

@@ -7,6 +7,7 @@ export default class ArtistById extends PureComponent {
   static propTypes = {
     match: PropTypes.object.isRequired
   }
+  
   state = {
     releases: []
   }
