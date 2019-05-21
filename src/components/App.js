@@ -1,9 +1,15 @@
 import React from 'react';
-import ArtistsContainer from './ArtistsContainer'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
+import ArtistsContainer from './ArtistsContainer';
+
 export default function App(){
   return (
-    <>
-    <ArtistsContainer />
-    </>
+    <Router>
+      <ArtistsContainer />
+    </Router>
   );
 }

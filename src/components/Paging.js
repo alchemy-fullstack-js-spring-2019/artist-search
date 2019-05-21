@@ -5,6 +5,7 @@ function Paging({ incrementPage, decrementPage, currentPage, allPages }) {
   return (
     <>
       <button onClick={() => decrementPage()}>Previous Page</button>
+      <p>CURRENT PAGE:{currentPage}/{allPages}</p>
       <button onClick={() => incrementPage()}>Next Page</button>
     </>
   );
