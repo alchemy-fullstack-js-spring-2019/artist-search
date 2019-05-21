@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './SearchForm.css';
 
 
 function SearchForm({ search, handleChange, searchSubmit }) {
   return (
-    <form onSubmit={ searchSubmit }>
-      <input name="search" type="text" onChange={ handleChange } value={ search } />
+    <form style={styles} onSubmit={ searchSubmit }>
+      <input name="search" type="text" onChange={ handleChange } value={ search } /><br/>
       <button type="submit">Search</button>
     </form>
   );
