@@ -62,7 +62,7 @@ export default class ArtistsContainer extends PureComponent {
   }
 
   render() {
-    const { artistName, page, text, artists, count } = this.state;
+    const { page, text, artists, count } = this.state;
 
     return (
       <>

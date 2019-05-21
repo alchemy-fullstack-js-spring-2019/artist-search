@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Artist({ artist }){
   return (
-    <p>{artist.name}</p>
+    <p>{artist.name} - {artist.disambiguation}</p>
   );
 }
 
