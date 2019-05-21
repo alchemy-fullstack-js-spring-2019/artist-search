@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Track(artist, songTitle) {
+export default function Track({ artist, songTitle }) {
   return <Link to={`/tracks/${artist}/${songTitle}`}>{songTitle}</Link>;
 }
 

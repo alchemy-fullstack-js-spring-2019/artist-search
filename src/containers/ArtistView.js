@@ -15,7 +15,7 @@ export default class ArtistView extends Component {
         id: PropTypes.string.isRequired,
         artist: PropTypes.string.isRequired
       }).isRequired
-    }),
+    }).isRequired
   }
 
   componentDidMount() {
