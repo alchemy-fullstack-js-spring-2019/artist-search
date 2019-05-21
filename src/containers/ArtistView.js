@@ -28,7 +28,7 @@ export default class ArtistView extends Component {
     return (
       <>
         <h2>{this.props.match.params.artist}</h2>
-        {this.state.albums && <AlbumList albumArr={this.state.albums.releases} />}
+        {this.state.albums && <AlbumList albumArr={this.state.albums.releases} artist={this.props.match.params.artist} />}
       </>
     );
   }

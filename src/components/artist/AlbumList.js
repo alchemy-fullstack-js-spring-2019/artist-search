@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Album from './Album';
+import { Link } from 'react-router-dom';
 
-function AlbumList({ albumArr }) {
+function AlbumList({ albumArr, artist }) {
   const allAlbums = albumArr.map(album => {
     return (
-      <li key={album.id}>
-        <Album album={album} />
-      </li>
+      <Link key={album.id} to={`/album/${album.id}/${artist}/${album.title}`}>
+        <li>
+          <Album album={album} />
+        </li>
+      </Link>
     );
   });
 
@@ -19,7 +22,8 @@ function AlbumList({ albumArr }) {
 }
 
 AlbumList.propTypes = {
-  albumArr: PropTypes.array.isRequired
+  albumArr: PropTypes.array.isRequired,
+  artist: PropTypes.string.isRequired
 };
 
 export default AlbumList;
