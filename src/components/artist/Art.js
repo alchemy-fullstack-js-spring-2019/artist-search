@@ -3,11 +3,18 @@ import PropTypes from 'prop-types';
 import artworkGetter from '../../services/artworkGetter';
 
 function Art({ id, archive }) {
-  let photo = 'http://www.baronblaze.com/wp-content/uploads/2015/12/music-placeholder.png';
+  
   if(archive) {
-    photo = artworkGetter(id);
+    return artworkGetter(id)
+      .then(res => {
+        console.log(res.url);
+        return <img src={res.url}></img>;
+      });
   }
-  return <img src={photo}></img>;
+  else {
+    let photo = 'http://www.baronblaze.com/wp-content/uploads/2015/12/music-placeholder.png';
+    return <img src={photo}></img>;
+  }
 }
 
 Art.propTypes = {
