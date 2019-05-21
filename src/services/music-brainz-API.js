@@ -29,3 +29,15 @@ export const getReleases = (artistId) => {
       coverArt: release['cover-art-archive'].front ? `http://coverartarchive.org/release/${release.id}/front` : 'https://radiohala.com/wp-content/uploads/default-cover-art.png'
     })));
 };
+
+export const getRecordings = (releaseId) => {
+  return fetch(`http://musicbrainz.org/ws/2/recording?release=${releaseId}&fmt=json`)
+    .then(res => ([res.ok, res.json()]))
+    .then(([ok, json]) => {
+      if(!ok) throw 'Unable to get recordings';
+      return json;
+    })
+    .then(({ recordings }) => recordings.map(recording => ({
+      title: recording.title
+    })));
+};
