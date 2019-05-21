@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Album from './Album';
 
 function AlbumList({ albumArr }) {
-  console.log(typeof albumArr.releases, albumArr.releases);
   const allAlbums = albumArr.map(album => {
     return (
       <li key={album.id}>

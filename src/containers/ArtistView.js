@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export default class ArtistView extends Component {
     
   state = {
-    albums: []
+    albums: null
   };
 
   static propTypes = {
@@ -21,7 +21,7 @@ export default class ArtistView extends Component {
   }
 
   componentDidMount() {
-    albumsGetter(this.props.id)
+    return albumsGetter(this.props.id)
       .then(albums => this.setState({ albums }));
   }
 
@@ -29,7 +29,7 @@ export default class ArtistView extends Component {
     return (
       <>
         <h2>{this.props.artist}</h2>
-        <AlbumList albumArr={this.state.albums} />
+        {this.state.albums && <AlbumList albumArr={this.state.albums.releases} />}
       </>
     );
   }
