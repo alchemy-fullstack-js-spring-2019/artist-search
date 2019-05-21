@@ -35,7 +35,7 @@ export default class AlbumView extends PureComponent {
       <>
         <h2>{this.props.match.params.album}</h2>
         <h3>{this.props.match.params.artist}</h3>
-        <img style={imgStyle} src={`http://coverartarchive.org/release/${this.props.match.params.id}/front` || 'http://www.baronblaze.com/wp-content/uploads/2015/12/music-placeholder.png'} />
+        <img style={imgStyle} src={`http://coverartarchive.org/release/${this.props.match.params.id}/front`} onError={(e)=>{e.target.onerror = null; e.target.src = 'http://www.baronblaze.com/wp-content/uploads/2015/12/music-placeholder.png'; }} />
         {this.state.tracks && <TrackList artist={this.props.match.params.artist} tracks={this.state.tracks} />}
       </>
     );
