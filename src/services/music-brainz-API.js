@@ -14,3 +14,19 @@ export const getArtists = (search, page) => {
       }))
     }));
 };
+
+export const getReleases = (artistId) => {
+  return fetch(`http://musicbrainz.org/ws/2/release?artist=${artistId}&fmt=json`)
+    .then(res => ([res.ok, res.json()]))
+    .then(([ok, json]) => {
+      if(!ok) throw 'Unable to get releases';
+
+      return json.releases;
+    })
+    .then(releases => releases.map(release => ({
+      title: release.title,
+      id: release.id,
+      date: release.date,
+      coverArt: release['cover-art-archive'].front
+    })));
+};
