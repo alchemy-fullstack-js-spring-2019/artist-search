@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Album from './Album';
+import { Link } from 'react-router-dom';
 
 
-function Albums({ albumArray }){
-  const albums = albumArray.map((album, i)=>{
+function Albums({ albumArray }) {
+  const albums = albumArray.map((album, i) => {
     let coverArtUrl;
     const hasCoverArt = album['cover-art-archive'].front;
     if(hasCoverArt) {
@@ -12,9 +13,13 @@ function Albums({ albumArray }){
     } else {
       coverArtUrl = 'https://fakeimg.pl/640x360';
     }
-
+    const albumId = `/album/${album.id}`;
     return (
-      <li key={i}><Album album={album.title} image={coverArtUrl}/></li>
+      <li key={i}>
+        <Link to={albumId}>
+          <Album album={album.title} image={coverArtUrl} />
+        </Link>
+      </li>
     );
   });
 

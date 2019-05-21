@@ -15,7 +15,7 @@ Paging.propTypes = {
   incrementPage: PropTypes.func.isRequired,
   decrementPage: PropTypes.func.isRequired,
   currentPage: PropTypes.number.isRequired,
-  allPages: PropTypes.number.isRequired
+  allPages: PropTypes.number
 };
 
 export default Paging;
