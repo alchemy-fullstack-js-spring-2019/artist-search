@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Lyrics({ lyrics }) {
   return (
-    <p>{lyrics}</p>
+    <pre>{lyrics}</pre>
   );
 }
 
