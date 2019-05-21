@@ -8,10 +8,7 @@ export default class ArtistSearch extends PureComponent {
     searchTerm: '',
     artistResults: []
   }
-
-  // 1. user types in search term, hits submit. Search term is set in state.
-  // 2. api call is made with searchTerm, updates state with results
-  // 3. results are loaded in the artistList
+  
   handleSubmit = event => {
     event.preventDefault();
     

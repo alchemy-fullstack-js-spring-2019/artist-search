@@ -2,10 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import TrackList from '../components/album/TrackList';
 import tracksGetter from '../services/tracksGetter';
+import getLyrics from '../services/getLyrics';
+import Lyrics from '../components/album/Lyrics';
 
 export default class AlbumView extends PureComponent {
   state = {
-    tracks: null
+    tracks: null,
+    lyrics: ''
   }
 
   static propTypes = {
@@ -25,6 +28,16 @@ export default class AlbumView extends PureComponent {
       });
   }
 
+  // handle change for when track is clicked - updates state and triggers rerender
+
+  lyricsLoad(artist, songTitle) {
+    console.log('in lyricsLoad', artist, songTitle);
+    return getLyrics(artist, songTitle)
+      .then(lyrics => {
+        this.setState({ lyrics });
+      });
+  }
+
   render() {
 
     const imgStyle = {
@@ -33,10 +46,15 @@ export default class AlbumView extends PureComponent {
 
     return (
       <>
-        <h2>{this.props.match.params.album}</h2>
-        <h3>{this.props.match.params.artist}</h3>
-        <img style={imgStyle} src={`http://coverartarchive.org/release/${this.props.match.params.id}/front`} onError={(e)=>{e.target.onerror = null; e.target.src = 'http://www.baronblaze.com/wp-content/uploads/2015/12/music-placeholder.png'; }} />
-        {this.state.tracks && <TrackList artist={this.props.match.params.artist} tracks={this.state.tracks} />}
+        <div>
+          <h2>{this.props.match.params.album}</h2>
+          <h3>{this.props.match.params.artist}</h3>
+          <img style={imgStyle} src={`http://coverartarchive.org/release/${this.props.match.params.id}/front`} onError={(e)=>{e.target.onerror = null; e.target.src = 'http://www.baronblaze.com/wp-content/uploads/2015/12/music-placeholder.png'; }} />
+          {this.state.tracks && <TrackList artist={this.props.match.params.artist} tracks={this.state.tracks} lyricsLoad={this.lyricsLoad} />}
+        </div>
+        <div>
+          <Lyrics lyrics={this.state.lyrics}  />
+        </div>
       </>
     );
   }
