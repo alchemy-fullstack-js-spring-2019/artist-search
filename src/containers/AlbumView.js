@@ -40,10 +40,8 @@ export default class AlbumView extends PureComponent {
   }
 
   lyricsLoad(artist, songTitle) {
-    console.log('in lyricsLoad', artist, songTitle);
     return getLyrics(artist, songTitle)
       .then(lyrics => {
-        console.log(lyrics);
         this.setState({ lyrics });
       });
   }
