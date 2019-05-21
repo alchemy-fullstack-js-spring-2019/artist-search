@@ -16,19 +16,18 @@ export default class ArtistView extends Component {
         artist: PropTypes.string.isRequired
       }).isRequired
     }),
-    artist: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired
   }
 
   componentDidMount() {
-    return albumsGetter(this.props.id)
+    return albumsGetter(this.props.match.params.id)
       .then(albums => this.setState({ albums }));
   }
 
   render() {
+    console.log(this.props.match.params.id);
     return (
       <>
-        <h2>{this.props.artist}</h2>
+        <h2>{this.props.match.params.artist}</h2>
         {this.state.albums && <AlbumList albumArr={this.state.albums.releases} />}
       </>
     );

@@ -17,7 +17,6 @@ export default class ArtistSearch extends PureComponent {
     
     return artistGetter(this.state.searchTerm)
       .then(res => {
-        console.log(res);
         this.setState({ artistResults: res.artists });
       });
   }
