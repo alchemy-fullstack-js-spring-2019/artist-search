@@ -20,13 +20,12 @@ export const getReleases = (artistId) => {
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
       if(!ok) throw 'Unable to get releases';
-
-      return json.releases;
+      return json;
     })
-    .then(releases => releases.map(release => ({
+    .then(({ releases }) => releases.map(release => ({
       title: release.title,
       id: release.id,
       date: release.date,
-      coverArt: release['cover-art-archive'].front
+      coverArt: release['cover-art-archive'].front ? `http://coverartarchive.org/release/${release.id}/front` : 'https://radiohala.com/wp-content/uploads/default-cover-art.png'
     })));
 };
