@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Artists component renders the Artists 1`] = `
+<ul>
+  <li
+    key="123"
+  >
+    <Artist
+      id="123"
+      name="Shakira"
+    />
+  </li>
+  <li
+    key="321"
+  >
+    <Artist
+      id="321"
+      name="Beyonce"
+    />
+  </li>
+</ul>
+`;

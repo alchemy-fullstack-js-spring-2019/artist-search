@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Releases component renders the Releases 1`] = `
+<ul>
+  <li
+    key="123"
+  >
+    <Release
+      artist="Yes"
+      coverArt="https://radiohala.com/wp-content/uploads/default-cover-art.png"
+      date="1942"
+      id="123"
+      title="okay"
+    />
+  </li>
+  <li
+    key="442"
+  >
+    <Release
+      artist="Yes"
+      coverArt="https://radiohala.com/wp-content/uploads/default-cover-art.png1"
+      date="1099"
+      id="442"
+      title="Nah"
+    />
+  </li>
+</ul>
+`;
