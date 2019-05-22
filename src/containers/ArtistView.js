@@ -37,7 +37,6 @@ export default class ArtistView extends Component {
     this.setState({ currentPage }, () => {
       return albumsGetter(this.props.match.params.id, this.state.currentPage)
         .then(res => {
-          console.log(res);
           this.setState({ albums: res, totalPages: Math.ceil(res['release-count'] / 10) });
         });
     });

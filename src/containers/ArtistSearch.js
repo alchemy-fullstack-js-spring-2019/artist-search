@@ -41,10 +41,6 @@ export default class ArtistSearch extends PureComponent {
     });
   }
 
-  componentDidUpdate() {
-    console.log('thing happened');
-  }
-
   render() {
     const { searchTerm, artistResults } = this.state;
     return (

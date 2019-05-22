@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 function Paging({ currentPage, totalPages, changePage }) {
   return (
-    <>
-    <button onClick={() => changePage(currentPage - 1)}>Previous Page</button>
-    <p>{currentPage + 1} of {totalPages}</p>
-    <button onClick={() => changePage(currentPage + 1)}>Next Page</button>
-    </>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <button style={{ height: '20px' }} onClick={() => changePage(currentPage - 1)}> Prev </button>
+      <p>{currentPage + 1} of {totalPages}</p>
+      <button style={{ height: '20px' }} onClick={() => changePage(currentPage + 1)}> Next </button>
+    </div>
   );
 }
 

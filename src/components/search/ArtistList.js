@@ -11,7 +11,7 @@ function ArtistList({ artistArr }) {
     );
   });
 
-  return <ol>{allArtists}</ol>;
+  return <ul>{allArtists}</ul>;
 }
 
 ArtistList.propTypes = {

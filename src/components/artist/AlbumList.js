@@ -7,7 +7,7 @@ function AlbumList({ albumArr, artist }) {
   const allAlbums = albumArr.map(album => {
     return (
       <Link key={album.id} to={`/album/${album.id}/${artist}/${album.title}`}>
-        <li>
+        <li style={{ margin: '20px', background: 'lavender', padding: '10px', color: 'black' }}>
           <Album album={album} />
         </li>
       </Link>
@@ -15,7 +15,7 @@ function AlbumList({ albumArr, artist }) {
   });
 
   return (
-    <ul>
+    <ul style={{ display: 'flex', flexWrap: 'wrap', width: '100%', listStyle: 'none' }}>
       {allAlbums}
     </ul>
   );
