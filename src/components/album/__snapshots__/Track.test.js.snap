@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Track component matches snapshot 1`] = `
+<a
+  href="javascript:void(0)"
+  onClick={[Function]}
+/>
+`;
