@@ -1,5 +1,5 @@
 export default function tracksGetter(albumId) {
-  return fetch(`http://musicbrainz.org/ws/2/recording?release=${albumId}&fmt=json`)
+  return fetch(`https://musicbrainz.org/ws/2/recording?release=${albumId}&fmt=json`)
     .then(res => {
       return ([res.ok, res.json()]);
     })
