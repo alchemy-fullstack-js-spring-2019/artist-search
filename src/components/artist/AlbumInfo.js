@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function AlbumInfo({ year, title }) {
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h3>{title}</h3>
       <h4>{year}</h4>
     </div>
