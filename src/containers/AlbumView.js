@@ -52,18 +52,26 @@ export default class AlbumView extends PureComponent {
       width: '200px'
     };
 
+    const containerStyle = {
+      display: 'flex'
+    };
+
+    const lyricsStyle = {
+      marginLeft: '50px'
+    };
+
     return (
-      <>
+      <div style={containerStyle}>
         <div>
           <h2>{this.props.match.params.album}</h2>
           <h3>{this.props.match.params.artist}</h3>
           <img style={imgStyle} src={`http://coverartarchive.org/release/${this.props.match.params.id}/front`} onError={(e)=>{e.target.onerror = null; e.target.src = 'http://www.baronblaze.com/wp-content/uploads/2015/12/music-placeholder.png'; }} />
           {this.state.tracks && <TrackList artist={this.props.match.params.artist} tracks={this.state.tracks} lyricsLoad={this.lyricsLoad} />}
         </div>
-        <div>
+        <div style={lyricsStyle}>
           <Lyrics lyrics={this.state.lyrics}  />
         </div>
-      </>
+      </div>
     );
   }
 }

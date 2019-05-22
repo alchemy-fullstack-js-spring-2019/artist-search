@@ -11,8 +11,12 @@ function TrackList({ artist, tracks, lyricsLoad }) {
     );
   });
 
+  const olStyles = {
+    padding: '25px'
+  };
+
   return (
-    <ol>
+    <ol style={olStyles}>
       {trackList}
     </ol>
   );
