@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TrackList component matches snapshot 1`] = `<ol />`;
+exports[`TrackList component matches snapshot 1`] = `
+<ol
+  style={
+    Object {
+      "padding": "25px",
+    }
+  }
+/>
+`;
