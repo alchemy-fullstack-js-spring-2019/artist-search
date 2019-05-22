@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Artist component renders an artist 1`] = `
+<p>
+  name
+   - 
+  true
+</p>
+`;

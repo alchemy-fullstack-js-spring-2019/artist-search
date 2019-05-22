@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Artists component renders stuff 1`] = `
+<ul>
+  <li
+    key="0"
+  >
+    <Link
+      to="/Bumblebee/1234"
+    >
+      <Artist
+        artist={
+          Object {
+            "id": 1234,
+            "name": "Bumblebee",
+          }
+        }
+      />
+    </Link>
+  </li>
+</ul>
+`;

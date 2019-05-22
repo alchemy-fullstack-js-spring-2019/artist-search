@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Album component renders stuff 1`] = `
+<Fragment>
+  <p>
+    test album
+  </p>
+  <img
+    src="test image"
+    style={
+      Object {
+        "height": "auto",
+        "width": "100px",
+      }
+    }
+  />
+</Fragment>
+`;

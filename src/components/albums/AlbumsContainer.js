@@ -55,8 +55,6 @@ export default class AlbumsContainer extends PureComponent {
     });
   }
 
-  
-  
   componentDidMount() {
     this.getAlbums();
   }
@@ -79,4 +77,3 @@ export default class AlbumsContainer extends PureComponent {
     );
   }
 }
-
