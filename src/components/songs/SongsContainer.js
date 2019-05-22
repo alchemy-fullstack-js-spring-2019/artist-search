@@ -30,7 +30,7 @@ export default class SongsContainer extends PureComponent {
     const { songs } = this.state;
     return (
       <>
-      {songs && <Songs songsArray={songs} />}
+      {songs && <Songs match={this.props.match} songsArray={songs} />}
       </>
     );
   }

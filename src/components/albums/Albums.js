@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Album from './Album';
 import { Link } from 'react-router-dom';
 
-
-function Albums({ albumArray }) {
+function Albums({ albumArray,  match }) {
+  console.log('match', match);
   const albums = albumArray.map((album, i) => {
     let coverArtUrl;
     const hasCoverArt = album['cover-art-archive'].front;
@@ -13,7 +13,7 @@ function Albums({ albumArray }) {
     } else {
       coverArtUrl = 'https://fakeimg.pl/640x360';
     }
-    const albumId = `/album/${album.id}`;
+    const albumId = `/${match.params.artistName}/${match.params.artistId}/${album.id}`;
     return (
       <li key={i}>
         <Link to={albumId}>
@@ -32,8 +32,8 @@ function Albums({ albumArray }) {
 
 
 Albums.propTypes = {
-  albumArray: PropTypes.array.isRequired
-}
-;
+  albumArray: PropTypes.array.isRequired,
+  match: PropTypes.object.isRequired
+};
 
 export default Albums;

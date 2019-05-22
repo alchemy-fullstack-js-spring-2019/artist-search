@@ -74,7 +74,7 @@ export default class AlbumsContainer extends PureComponent {
     return (
       <>
       <Paging currentPage={page} allPages={10} incrementPage={this.incrementPage} decrementPage={this.decrementPage}/>
-      {albums && paged && <Albums albumArray={paged} />}
+      {albums && paged && <Albums match={this.props.match} albumArray={paged} />}
       </>
     );
   }

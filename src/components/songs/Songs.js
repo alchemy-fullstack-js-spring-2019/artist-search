@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Song from './Song';
 import { Link } from 'react-router-dom';
 
-function Songs({ songsArray }) {
+function Songs({ songsArray, match }) {
   const songsList = songsArray.map((song, i) => {
-    console.log(song);
-    const songId = `/songs/${song.id}`;
+    const songName = song.title;
+    const songId = `/${match.params.artistName}/${match.params.artistId}/${match.params.albumId}/${songName}/${song.id}`;
     return (
       <li key={i}>
         <Link to={songId}><Song song={song.title} /></Link>
@@ -22,7 +22,8 @@ function Songs({ songsArray }) {
 }
 
 Songs.propTypes = {
-  songsArray: PropTypes.array.isRequired
+  songsArray: PropTypes.array.isRequired,
+  match: PropTypes.object.isRequired
 };
 
 export default Songs;
