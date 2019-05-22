@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArtistSearch component matches snapshot 1`] = `
+<Fragment>
+  <SearchForm
+    handleChange={[Function]}
+    handleSubmit={[Function]}
+    term=""
+  />
+  <ArtistList
+    artistArr={Array []}
+  />
+  <Paging
+    changePage={[Function]}
+    currentPage={0}
+    totalPages={1}
+  />
+</Fragment>
+`;

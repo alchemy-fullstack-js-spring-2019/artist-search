@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component matches snapshot 1`] = `
+<Link
+  to="/"
+>
+  <h1
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    Artist Search
+  </h1>
+</Link>
+`;

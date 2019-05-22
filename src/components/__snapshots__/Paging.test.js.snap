@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paging component matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "justifyContent": "center",
+    }
+  }
+>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "height": "20px",
+      }
+    }
+  >
+     Prev 
+  </button>
+  <p>
+    2
+     of 
+    2
+  </p>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "height": "20px",
+      }
+    }
+  >
+     Next 
+  </button>
+</div>
+`;

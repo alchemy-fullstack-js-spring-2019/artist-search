@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Art component matches snapshot 1`] = `
+<img
+  src="http://coverartarchive.org/release//front"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+/>
+`;
