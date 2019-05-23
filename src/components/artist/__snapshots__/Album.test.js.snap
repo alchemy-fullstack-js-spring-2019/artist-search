@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Album component matches snapshot 1`] = `
+<Fragment>
+  <Art
+    archive="7800"
+    id="5678"
+  />
+  <AlbumInfo
+    title="7890"
+    year="67890"
+  />
+</Fragment>
+`;

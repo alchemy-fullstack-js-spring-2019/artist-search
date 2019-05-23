@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlbumList component matches snapshot 1`] = `
+<ul
+  style={
+    Object {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "listStyle": "none",
+      "width": "100%",
+    }
+  }
+/>
+`;
