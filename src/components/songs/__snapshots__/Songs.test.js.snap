@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Songs component renders stuff 1`] = `
+<ul>
+  <li
+    key="0"
+  >
+    <Link
+      to="/undefined/undefined/undefined/song2/undefined"
+    >
+      <Song
+        song="song2"
+      />
+    </Link>
+  </li>
+</ul>
+`;
