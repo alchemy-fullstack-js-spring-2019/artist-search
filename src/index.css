@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+
+body {
+  text-align: center;
+  background-image: url("./assets/wolf.png");
+  background-color: navy;
+  color: black;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+
+img {
+  border-radius: 5px;
+}

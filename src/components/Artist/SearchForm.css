@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+
+form {
+  button{
+    background-color: skyblue;
+    border-radius: 5px;
+    width: 8vw;
+    height: 3vh;
+    margin: 2vh;
+  }
+
+}

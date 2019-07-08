@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recordings component renders the Recordings 1`] = `
+<ul>
+  <li>
+    <Recording
+      artist="Kanye West"
+      title="Stronger"
+    />
+  </li>
+  <li>
+    <Recording
+      artist="Kanye West"
+      title="Lift Yourself"
+    />
+  </li>
+  <li>
+    <Recording
+      artist="Kanye West"
+      title="Gold Digger"
+    />
+  </li>
+</ul>
+`;
